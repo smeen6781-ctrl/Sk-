@@ -1,0 +1,114 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Bubblewrap CLI
+        run: npm install -g @bubblewrap/cli
+
+      - name: Configure Bubblewrap Environment
+        run: |
+          mkdir -p ~/.bubblewrap
+          cat << 'EOF' > ~/.bubblewrap/config.json
+          {
+            "jdkPath": "${JAVA_HOME}",
+            "androidSdkPath": "${ANDROID_HOME}"
+          }
+          EOF
+
+      - name: Initialize and Build Android APK
+        env:
+          BUBBLEWRAP_KEYSTORE_PASSWORD: android
+          BUBBLEWRAP_KEY_PASSWORD: android
+        run: |
+          mkdir -p pwa-android && cd pwa-android
+
+          # Create debug keystore
+          keytool -genkey -v -keystore ./android.keystore \
+            -storepass android -alias androiddebugkey -keypass android \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+
+          # Configure TWA manifest for automated non-interactive CI build
+          cat << 'EOF' > twa-manifest.json
+          {
+            "packageId": "com.sk.aisonggenerator.twa",
+            "host": "ais-pre-lf4njs3w3wd5btanf3bzm5-33072044257.asia-northeast1.run.app",
+            "name": "SK AI Song Generator",
+            "launcherName": "SK Song AI",
+            "themeColor": "#0f172a",
+            "navigationColor": "#000000",
+            "backgroundColor": "#090d16",
+            "enableNotifications": true,
+            "startUrl": "/",
+            "iconUrl": "https://ais-pre-lf4njs3w3wd5btanf3bzm5-33072044257.asia-northeast1.run.app/pwa-512x512.png",
+            "maskableIconUrl": "https://ais-pre-lf4njs3w3wd5btanf3bzm5-33072044257.asia-northeast1.run.app/pwa-maskable-512x512.png",
+            "appVersionCode": 1,
+            "appVersionName": "1.0.0",
+            "signingKey": {
+              "path": "./android.keystore",
+              "alias": "androiddebugkey"
+            },
+            "generatorApp": "bubblewrap-cli",
+            "webManifestUrl": "https://ais-pre-lf4njs3w3wd5btanf3bzm5-33072044257.asia-northeast1.run.app/manifest.json",
+            "fallbackType": "customtabs",
+            "features": {},
+            "alphaDependencies": {
+              "enabled": false
+            },
+            "enableSiteSettingsShortcut": true,
+            "isChromeOSOnly": false,
+            "fullScopeUrl": "https://ais-pre-lf4njs3w3wd5btanf3bzm5-33072044257.asia-northeast1.run.app/",
+            "minSdkVersion": 21
+          }
+          EOF
+
+          # Build APK with Bubblewrap
+          bubblewrap build --skipPwaValidation || bubblewrap build
+
+          # Ensure generated APK is located in pwa-android for subsequent steps
+          find . -maxdepth 4 -name "*.apk" -exec cp {} . \;
+          ls -la *.apk
+
+      - name: Upload Debug APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: pwa-android/*.apk
+          if-no-files-found: error
+
+      - name: Publish APK to GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v1.0.${{ github.run_number }}"
+          gh release create "$TAG" pwa-android/*.apk \
+            --title "Android APK Build #${{ github.run_number }}" \
+            --notes "Auto-generated Android APK from GitHub Actions for SK AI Song Generator."
