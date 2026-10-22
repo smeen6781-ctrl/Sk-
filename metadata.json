@@ -1,0 +1,6 @@
+{
+  "name": "SK AI Song Generator",
+  "description": "Professional AI music creation studio generating original songs with AI vocals, lyrics, and instrumentation across multiple styles and languages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

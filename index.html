@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        // Suppress and intercept Vite dev HMR WebSocket errors in AI Studio iframe preview
+        window.addEventListener('unhandledrejection', function(event) {
+          var reason = event && event.reason;
+          var msg = (reason && reason.message) || (typeof reason === 'string' ? reason : '');
+          if (msg && msg.indexOf('WebSocket') !== -1) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        });
+
+        if (typeof window.WebSocket !== 'undefined') {
+          var OrigWebSocket = window.WebSocket;
+          window.WebSocket = function(url, protocols) {
+            var isHmr = false;
+            if (typeof protocols === 'string' && protocols.indexOf('vite-hmr') !== -1) {
+              isHmr = true;
+            } else if (Array.isArray(protocols) && protocols.indexOf('vite-hmr') !== -1) {
+              isHmr = true;
+            } else if (typeof url === 'string' && (url.indexOf('vite') !== -1 || url.indexOf('hmr') !== -1)) {
+              isHmr = true;
+            }
+
+            if (isHmr) {
+              var listeners = {};
+              var dummy = {
+                readyState: 1,
+                bufferedAmount: 0,
+                extensions: '',
+                protocol: 'vite-hmr',
+                url: url,
+                send: function() {},
+                close: function() {},
+                addEventListener: function(type, cb) {
+                  listeners[type] = listeners[type] || [];
+                  listeners[type].push(cb);
+                  if (type === 'open') {
+                    setTimeout(function() {
+                      try { cb({ type: 'open' }); } catch (e) {}
+                      if (typeof dummy.onopen === 'function') {
+                        try { dummy.onopen({ type: 'open' }); } catch (e) {}
+                      }
+                    }, 0);
+                  }
+                },
+                removeEventListener: function(type, cb) {
+                  if (listeners[type]) {
+                    listeners[type] = listeners[type].filter(function(fn) { return fn !== cb; });
+                  }
+                },
+                dispatchEvent: function() { return false; },
+                onopen: null,
+                onclose: null,
+                onerror: null,
+                onmessage: null
+              };
+              return dummy;
+            }
+            return new OrigWebSocket(url, protocols);
+          };
+          window.WebSocket.prototype = OrigWebSocket.prototype;
+          window.WebSocket.CONNECTING = OrigWebSocket.CONNECTING;
+          window.WebSocket.OPEN = OrigWebSocket.OPEN;
+          window.WebSocket.CLOSING = OrigWebSocket.CLOSING;
+          window.WebSocket.CLOSED = OrigWebSocket.CLOSED;
+        }
+      })();
+    </script>
+    <title>SK AI Song Generator</title>
+    <meta name="description" content="Professional AI music creation studio generating original songs with AI vocals, lyrics, and instrumentation across multiple styles and languages." />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SK Song AI" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta property="og:title" content="SK AI Song Generator" />
+    <meta property="og:description" content="Professional AI music creation studio generating original songs with AI vocals, lyrics, and instrumentation across multiple styles and languages." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').catch(function(err) {
+            console.warn('SW registration:', err);
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

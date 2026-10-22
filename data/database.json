@@ -1,0 +1,408 @@
+{
+  "users": [
+    {
+      "id": "demo-user-1",
+      "name": "Demo Artist",
+      "email": "artist@sk-ai.studio",
+      "phone": "+91 98765 43210",
+      "role": "user",
+      "credits": 25,
+      "subscription_plan": "creator",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "created_at": "2026-10-16T14:57:07.787Z"
+    },
+    {
+      "id": "admin-user-1",
+      "name": "SK AI Admin",
+      "email": "admin@sk-ai.studio",
+      "role": "admin",
+      "credits": 9999,
+      "subscription_plan": "pro",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "created_at": "2026-09-21T14:57:07.788Z"
+    }
+  ],
+  "songs": [
+    {
+      "id": "song-1792596857961-kvgky",
+      "user_id": "demo-user-1",
+      "title": "तेरी यादों में रात गुज़र जाती है,",
+      "prompt": "Soulful Bollywood acoustic track with gentle tabla beats",
+      "style": "Bollywood-inspired",
+      "mood": "Romantic",
+      "language": "Hindi",
+      "tempo": 96,
+      "vocal_style": "Melodic & Emotional",
+      "duration": 30,
+      "audio_url": "/api/audio/song-1792596857961-kvgky",
+      "cover_url": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=500&auto=format&fit=crop&q=80",
+      "lyrics": "तेरी यादों में रात गुज़र जाती है,\nतेरी बातें दिल को रुलाती हैं,\nतू नहीं है फिर भी लगता है,\nतेरी धड़कन पास बुलाती है।",
+      "provider": "gemini-tts",
+      "model": "gemini-3.8-flash-tts + studio-accompaniment",
+      "status": "ready",
+      "created_at": "2026-10-21T15:34:27.714Z"
+    },
+    {
+      "id": "song-1792596169978-ejmsm",
+      "user_id": "demo-user-1",
+      "title": "तेरी यादों में रात गुज़र जाती है,",
+      "prompt": "Soulful Bollywood romantic melody with acoustic guitar and sweet vocals",
+      "style": "Bollywood-inspired",
+      "mood": "Romantic",
+      "language": "Hindi",
+      "tempo": 96,
+      "vocal_style": "Melodic & Emotional",
+      "duration": 30,
+      "audio_url": "/api/audio/song-1792596169978-ejmsm",
+      "cover_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=80",
+      "lyrics": "तेरी यादों में रात गुज़र जाती है,\nतेरी बातें दिल को रुलाती हैं,\nतू नहीं है फिर भी लगता है,\nतेरी धड़कन पास बुलाती है।",
+      "provider": "gemini-tts",
+      "model": "gemini-3.8-flash-tts + studio-accompaniment",
+      "status": "ready",
+      "created_at": "2026-10-21T15:23:00.682Z"
+    },
+    {
+      "id": "song-1792595152059-troue",
+      "user_id": "demo-user-1",
+      "title": "Yaad Teri Hai",
+      "prompt": "तेरी यादों में खोया रहता हूँ,\nरातों में तुझको ही कहता हूँ…\nतू पास नहीं, फिर भी जाने क्यों,\nहर पल तुझमें ही रहता हूँ…\n\n[Verse – 0:10–0:30]\nतेरे बिना ये दिल लगता नहीं,\nकोई दर्द मेरा समझता नहीं…\nहँसता हूँ मैं दुनिया के सामने,\nपर दिल अब मेरा हँसता नहीं…\n\n[Chorus – 0:30–0:48]\nतू मेरी थी, तू मेरी है,\nदिल में अब भी तस्वीर तेरी है…\nचाहे तू लौटकर आए ना कभी,\nमेरी हर धड़कन में याद तेरी है…\n\n[Outro – 0:48–1:00]\nकाश तुझे भी एहसास हो,\nमेरे प्यार की कुछ तो प्यास हो…\nतू खुश रहे बस इतनी दुआ,\nचाहे मेरी ज़िंदगी उदास हो… 💔",
+      "style": "Bollywood-inspired",
+      "mood": "Romantic",
+      "language": "Hinglish",
+      "tempo": 100,
+      "vocal_style": "Melodic Vocals",
+      "duration": 60,
+      "audio_url": "/api/audio/song-1792595152059-troue",
+      "cover_url": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=500&auto=format&fit=crop&q=80",
+      "lyrics": "[Verse 1]\nTere bina yeh dil lagta nahi,\nKoi dard mera samajhta nahi...\nHasta hoon main duniya ke saamne,\nPar dil ab mera hasta nahi...\nTeri yaadon mein khoya rehta hoon,\nRaaton mein tujhko hi kehta hoon...\n\n[Chorus]\nTu meri thi, tu meri hai,\nDil mein ab bhi tasveer teri hai...\nChaahe tu lautkar aaye na kabhi,\nMeri har dhadkan mein yaad teri hai...\nTu meri thi, tu meri hai,\nHar saans mein bas fariyaad teri hai...\n\n[Verse 2]\nKhaali hain raahein, khamosh nazaare,\nDhoondhein tujhe yeh nain bechaare...\nBaaton mein teri jo meethi fiza thi,\nAb toh faaslon ki bas yeh sazaa thi...\nTu paas nahi phir bhi jaane kyun,\nHar pal tujhmein hi rehta hoon...\n\n[Chorus]\nTu meri thi, tu meri hai,\nDil mein ab bhi tasveer teri hai...\nChaahe tu lautkar aaye na kabhi,\nMeri har dhadkan mein yaad teri hai...\n\n[Bridge]\nSaansein tham si jaati hain jab naam tera aata hai,\nYeh toota hua aashiq bas tera geet gata hai...\nEk baar mudke dekh le meri wafaaon ko,\nMaine saup diya dil apni in duaaon ko...\n\n[Chorus]\nTu meri thi, tu meri hai,\nDil mein ab bhi tasveer teri hai...\nChaahe tu lautkar aaye na kabhi,\nMeri har dhadkan mein yaad teri hai...\n\n[Outro]\nKaash tujhe bhi ehsaas ho,\nMere pyaar ki kuch toh pyaas ho...\nTu khush rahe bas itni dua,\nChaahe meri zindagi udaas ho... 💔",
+      "provider": "lyria-3-clip",
+      "model": "sk-synth (lyria fallback)",
+      "status": "ready",
+      "created_at": "2026-10-21T15:07:37.663Z"
+    },
+    {
+      "id": "song-1792594942383-htt5b",
+      "user_id": "demo-user-1",
+      "title": "Romantic Lofi Anthem",
+      "prompt": "Lofi song",
+      "style": "Lofi",
+      "mood": "Romantic",
+      "language": "Hindi",
+      "tempo": 82,
+      "vocal_style": "Melodic Vocals",
+      "duration": 60,
+      "audio_url": "/api/audio/song-1792594942383-htt5b",
+      "cover_url": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=80",
+      "lyrics": "[Verse 1]\nWalk through the shadows under city lights\nSearching for rhythm in the endless nights\nEvery beat echoing what we left behind\nA melody frozen in the back of my mind.\n\n[Chorus]\nSing it loud, let the bass line break the dawn\nWe are here, together where we belong\nSK AI playing in my soul tonight\nLost in the frequency, burning bright.\n\n[Verse 2]\nHeartbeat syncs with the synthesizer glow\nCatching the wave, letting all the worry go\nEvery whisper turning to an anthem strong\nThis is our story, this is our song.\n\n[Bridge]\nAnd when the silence starts to creep\nMusic is the promise that we keep\nHigher and higher till the world disappears\nWashing away all the doubts and tears.\n\n[Outro]\nFade into the rhythm...\nLet the music breathe...\nSK AI forever.",
+      "provider": "lyria-3-clip",
+      "model": "sk-synth (lyria fallback)",
+      "status": "ready",
+      "created_at": "2026-10-21T15:02:25.426Z"
+    },
+    {
+      "id": "song-seed-4",
+      "user_id": "demo-user-1",
+      "title": "Neon Horizon EDM",
+      "prompt": "Futuristic melodic EDM festival anthem with soaring supersaws, driving four-on-the-floor beat, and euphoric synth lead",
+      "style": "EDM",
+      "mood": "Uplifting",
+      "language": "English",
+      "tempo": 128,
+      "vocal_style": "Dynamic Pop Vocals",
+      "duration": 30,
+      "audio_url": "/api/audio/song-seed-4",
+      "cover_url": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&auto=format&fit=crop&q=80",
+      "lyrics": "[Build]\nFeel the voltage in the air tonight\nEvery heartbeat chasing down the light\nCount down the seconds till the skies ignite\nThree, two, one — ignite!\n\n[Drop]\n(Euphoric lead synth explosion)\n\n[Outro]\nSK AI — The music of tomorrow.",
+      "provider": "lyria-3-clip",
+      "model": "lyria-3-clip-preview",
+      "status": "ready",
+      "created_at": "2026-10-21T03:40:09.598Z"
+    },
+    {
+      "id": "song-seed-3",
+      "user_id": "demo-user-1",
+      "title": "Midnight Monsoon Lofi",
+      "prompt": "Peaceful rain ambiance lofi chill study beats with vinyl crackle, mellow electric piano chords, and soothing warmth",
+      "style": "Lofi",
+      "mood": "Chill",
+      "language": "Instrumental",
+      "tempo": 82,
+      "vocal_style": "Instrumental Only",
+      "duration": 30,
+      "audio_url": "/api/audio/song-seed-3",
+      "cover_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&auto=format&fit=crop&q=80",
+      "lyrics": "[Instrumental Ambient Meditation]\n(Tape hiss, gentle rain droplets, rhodes keyboard progression in D-Major 7th)",
+      "provider": "sk-synth",
+      "model": "SK Algorithmic Engine",
+      "status": "ready",
+      "created_at": "2026-10-20T11:45:39.425Z"
+    },
+    {
+      "id": "song-seed-2",
+      "user_id": "demo-user-1",
+      "title": "Desi Drip Anthem",
+      "prompt": "Heavy bass Punjabi hip-hop track with high-energy 808 drop, dhol rolls, and confident Punjabi rap cadence",
+      "style": "Rap / Hip-Hop",
+      "mood": "Energetic",
+      "language": "Punjabi",
+      "tempo": 98,
+      "vocal_style": "Energetic Rap Flow",
+      "duration": 30,
+      "audio_url": "/api/audio/song-seed-2",
+      "cover_url": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&auto=format&fit=crop&q=80",
+      "lyrics": "[Verse 1]\nGaddi meri kaali, bass kardi boom\nJithe vi main jaawan, saari duniya ghum\nPind ton laike shehar tak chalda ae naat\nSK AI di beat te paande aa dhamaak\n\n[Chorus]\nDesi drip, saade wakhre andaaz\nSir te sajaaya mehnat da taaj\nRok sake na koi saadi raftaar\nGoonjdi awaaz saare sansaar!\n\n[Drop]\nYeah! Dhol beat drop!",
+      "provider": "lyria-3-pro",
+      "model": "lyria-3-pro-preview",
+      "status": "ready",
+      "created_at": "2026-10-18T21:40:24.555Z"
+    },
+    {
+      "id": "song-seed-1",
+      "user_id": "demo-user-1",
+      "title": "Tere Sang Beat (तेरे संग)",
+      "prompt": "Soulful Bollywood romantic melody with modern lofi acoustic guitar, gentle tabla beats, and emotive Hindi vocals",
+      "style": "Bollywood-inspired",
+      "mood": "Romantic",
+      "language": "Hinglish",
+      "tempo": 96,
+      "vocal_style": "Emotional, Melodic Soft",
+      "duration": 30,
+      "audio_url": "/api/audio/song-seed-1",
+      "cover_url": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=400&auto=format&fit=crop&q=80",
+      "lyrics": "[Verse 1]\nKhaamoshiyon mein tera chehra\nDhadkan pe tera hi pehra\nHar lamha yeh keh raha hai\nDil tere sang behta raha hai\n\n[Chorus]\nTere sang, tere sang yeh raatein\nKarti hain bas teri hi baatein\nSK AI ki iss dhun mein\nGhul gaye hum tere rang mein\n\n[Outro]\nTere sang... bas tere sang...",
+      "provider": "lyria-3-clip",
+      "model": "lyria-3-clip-preview",
+      "status": "ready",
+      "created_at": "2026-10-19T04:40:44.273Z"
+    }
+  ],
+  "generation_jobs": [
+    {
+      "id": "job-1792596867723-qe2k3",
+      "user_id": "demo-user-1",
+      "song_id": "song-1792596867723-csgma",
+      "status": "completed",
+      "progress": 100,
+      "step_description": "Song successfully generated and mastered!",
+      "provider": "gemini-tts",
+      "model": "gemini-tts",
+      "created_at": "2026-10-21T15:34:27.723Z",
+      "updated_at": "2026-10-21T15:34:35.654Z"
+    },
+    {
+      "id": "job-1792596857961-i1fna",
+      "user_id": "demo-user-1",
+      "song_id": "song-1792596857961-kvgky",
+      "status": "completed",
+      "progress": 100,
+      "step_description": "Song successfully generated and mastered!",
+      "provider": "gemini-tts",
+      "model": "gemini-tts",
+      "created_at": "2026-10-21T15:34:17.961Z",
+      "updated_at": "2026-10-21T15:34:27.714Z"
+    },
+    {
+      "id": "job-1792596169978-8girj",
+      "user_id": "demo-user-1",
+      "song_id": "song-1792596169978-ejmsm",
+      "status": "completed",
+      "progress": 100,
+      "step_description": "Song successfully generated and mastered!",
+      "provider": "gemini-tts",
+      "model": "gemini-tts",
+      "created_at": "2026-10-21T15:22:49.978Z",
+      "updated_at": "2026-10-21T15:23:00.683Z"
+    },
+    {
+      "id": "job-1792595152059-1fblv",
+      "user_id": "demo-user-1",
+      "song_id": "song-1792595152059-troue",
+      "status": "completed",
+      "progress": 100,
+      "step_description": "Song successfully generated and mastered!",
+      "provider": "lyria-3-clip",
+      "model": "lyria-3-clip-preview",
+      "created_at": "2026-10-21T15:05:52.059Z",
+      "updated_at": "2026-10-21T15:07:37.663Z"
+    },
+    {
+      "id": "job-1792594942383-bficu",
+      "user_id": "demo-user-1",
+      "song_id": "song-1792594942383-htt5b",
+      "status": "completed",
+      "progress": 100,
+      "step_description": "Song successfully generated and mastered!",
+      "provider": "lyria-3-clip",
+      "model": "lyria-3-clip-preview",
+      "created_at": "2026-10-21T15:02:22.383Z",
+      "updated_at": "2026-10-21T15:02:25.427Z"
+    }
+  ],
+  "credits": [
+    {
+      "id": "credit-1",
+      "user_id": "demo-user-1",
+      "balance": 60,
+      "bonus": 10,
+      "updated_at": "2026-10-21T14:57:07.788Z"
+    },
+    {
+      "id": "credit-admin",
+      "user_id": "admin-user-1",
+      "balance": 9999,
+      "bonus": 0,
+      "updated_at": "2026-10-21T14:57:07.788Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-1792596875654-lejh",
+      "user_id": "demo-user-1",
+      "amount": 0,
+      "credits": -5,
+      "type": "generation",
+      "description": "Generation of song: \"Neon lights in the pouring rain,\" (30s)",
+      "status": "completed",
+      "created_at": "2026-10-21T15:34:35.654Z"
+    },
+    {
+      "id": "tx-1792596867713-wjh2",
+      "user_id": "demo-user-1",
+      "amount": 0,
+      "credits": -5,
+      "type": "generation",
+      "description": "Generation of song: \"तेरी यादों में रात गुज़र जाती है,\" (30s)",
+      "status": "completed",
+      "created_at": "2026-10-21T15:34:27.713Z"
+    },
+    {
+      "id": "tx-1792596180682-y55b",
+      "user_id": "demo-user-1",
+      "amount": 0,
+      "credits": -5,
+      "type": "generation",
+      "description": "Generation of song: \"तेरी यादों में रात गुज़र जाती है,\" (30s)",
+      "status": "completed",
+      "created_at": "2026-10-21T15:23:00.682Z"
+    },
+    {
+      "id": "tx-1792595257663-ntjq",
+      "user_id": "demo-user-1",
+      "amount": 0,
+      "credits": -10,
+      "type": "generation",
+      "description": "Generation of song: \"Yaad Teri Hai\" (60s)",
+      "status": "completed",
+      "created_at": "2026-10-21T15:07:37.663Z"
+    },
+    {
+      "id": "tx-1792594945426-oxj9",
+      "user_id": "demo-user-1",
+      "amount": 0,
+      "credits": -10,
+      "type": "generation",
+      "description": "Generation of song: \"Romantic Lofi Anthem\" (60s)",
+      "status": "completed",
+      "created_at": "2026-10-21T15:02:25.426Z"
+    },
+    {
+      "id": "tx-welcome-1",
+      "user_id": "demo-user-1",
+      "amount": 0,
+      "credits": 50,
+      "type": "trial",
+      "description": "Welcome bonus trial credits",
+      "status": "completed",
+      "created_at": "2026-10-16T14:57:07.788Z"
+    },
+    {
+      "id": "tx-sub-1",
+      "user_id": "demo-user-1",
+      "amount": 9.99,
+      "credits": 20,
+      "type": "purchase",
+      "description": "Creator Pass subscription monthly boost",
+      "status": "completed",
+      "created_at": "2026-10-19T14:57:07.788Z"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub-1",
+      "user_id": "demo-user-1",
+      "plan_id": "creator",
+      "plan_name": "Creator Pass",
+      "status": "active",
+      "renews_at": "2026-11-15T14:57:07.788Z",
+      "created_at": "2026-10-16T14:57:07.788Z"
+    }
+  ],
+  "api_usage": [
+    {
+      "user_id": "demo-user-1",
+      "provider": "gemini-tts",
+      "model": "gemini-3.8-flash-tts + studio-accompaniment",
+      "duration_seconds": 30,
+      "cost_credits": 5,
+      "status": "success",
+      "id": "api-1792596875654-q91f",
+      "created_at": "2026-10-21T15:34:35.654Z"
+    },
+    {
+      "user_id": "demo-user-1",
+      "provider": "gemini-tts",
+      "model": "gemini-3.8-flash-tts + studio-accompaniment",
+      "duration_seconds": 30,
+      "cost_credits": 5,
+      "status": "success",
+      "id": "api-1792596867714-x7r7",
+      "created_at": "2026-10-21T15:34:27.714Z"
+    },
+    {
+      "user_id": "demo-user-1",
+      "provider": "gemini-tts",
+      "model": "gemini-3.8-flash-tts + studio-accompaniment",
+      "duration_seconds": 30,
+      "cost_credits": 5,
+      "status": "success",
+      "id": "api-1792596180683-rkhl",
+      "created_at": "2026-10-21T15:23:00.683Z"
+    },
+    {
+      "user_id": "demo-user-1",
+      "provider": "lyria-3-clip",
+      "model": "sk-synth (lyria fallback)",
+      "duration_seconds": 60,
+      "cost_credits": 10,
+      "status": "success",
+      "id": "api-1792595257663-ojk5",
+      "created_at": "2026-10-21T15:07:37.663Z"
+    },
+    {
+      "user_id": "demo-user-1",
+      "provider": "lyria-3-clip",
+      "model": "sk-synth (lyria fallback)",
+      "duration_seconds": 60,
+      "cost_credits": 10,
+      "status": "success",
+      "id": "api-1792594945427-irzo",
+      "created_at": "2026-10-21T15:02:25.427Z"
+    }
+  ],
+  "admin_audit_logs": [
+    {
+      "id": "log-1",
+      "admin_id": "admin-user-1",
+      "action": "SYSTEM_BOOT",
+      "details": "SK AI Studio engine initialized with multi-provider architecture.",
+      "timestamp": "2026-10-21T14:57:07.788Z"
+    }
+  ],
+  "admin_config": {
+    "active_provider": "lyria-3-clip",
+    "elevenlabs_api_key": "",
+    "fallback_enabled": true,
+    "cost_per_clip": 5,
+    "cost_per_full": 10
+  }
+}
